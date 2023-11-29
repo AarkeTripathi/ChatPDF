@@ -1,0 +1,125 @@
+Question 1:- Explain the attention mechanism utilized in the architecture of transformers, using your own words.
+
+Answer:- The monitoring process is an important part of the Transformer architecture. Transformers is a neural network architecture. The monitoring process allows Transformers to evaluate the importance of different sets of inputs when making predictions, making them especially useful for tasks that involve multiple components (such as natural language processing).
+
+The following is a description of the monitoring system used in the Transformer:
+
+1. Personal attention mechanism:
+- The main concept of the attention mechanism in Transformer is personal attention. Given an input sequence \(X = \{x_1, x_2, ..., x_n\}\), self-monitoring allows the model to evaluate the values ​​of each element over a range when predicting each season's output.
+
+2. Key, Question and Value:
+- In the self-monitoring process, there are three sets of vectors for each input key: Key (K), Question (Q) and Value (V) . \(W_K, W_Q, W_V \) is the learning weight matrix.
+
+3. Attention Score:
+- calculate the attention score from the product of the question and the key vector: ( text{Attention Points} = frac{QK^T}{sqrt{d_k}} ), where (d_k) is the key vector is the size.
+- Divide by (sqrt{d_k}) is a parameter that causes the product to grow too large and be lost during training. 4. Softmax and weighted sum:
+- Apply the softmax function to the scores to obtain the color weights: ( text{Attention Weights} = text{softmax}(text{Attention Points}) ).
+- calculate the weight of the value vectors using these weights: (text{Attention Out} = text{Attention Weight}timesV).
+
+5. Multi-Head Attention:
+- To capture multiple aspects of relationship in data, self-attention techniques are often used with multiple equal "heads". Each head has its own keys, questions and price predictions.
+- Outputs from multiple heads are combined and linearly converted to produce the final color output.
+
+6. Layerwise Stacking:
+- Transformers have multiple layers of self-generating mechanisms and feedforward neural networks.
+- The output of one layer serves as input to the next layer, allowing the model to capture hierarchical information.
+
+7. Positional Encoding:
+- Since the transformer inherently does not understand the order of the sequence, positional information is added to the input insertion. This allows the model to take into account each element's position in the sequence.
+
+The focus mechanism in Transformers allows the model to focus on different concepts linked to each element, maintaining long-term expectations and improving the ability to maintain the connection. This self-focus plays a key role in Transformer's success in multilingual operations and beyond.
+
+
+
+
+Question 2:- In your own words, elucidate Reinforcement Learning from Human Feedback (RLHF) and distinguish it from instruction fine-tuning.
+
+Answer:- Reinforcement Learning (RL) is a type of machine learning paradigm where an agent learns to make decisions by interacting with an environment. The agent's goal is to learn a strategy, known as a policy, that allows it to take actions in different situations to maximize some notion of cumulative reward over time.
+Reinforcement Learning from Human Feedback (RLHF), including reinforcement learning from human preferences, is a technique that trains a "reward model" directly from human feedback and uses the model as a reward function to optimize an agent's policy using reinforcement learning (RL) through an optimization algorithm like Proximal Policy Optimization. The reward model is trained in advance to the policy being optimized to predict if a given output is good (high reward) or bad (low reward). RLHF can improve the robustness and exploration of reinforcement-learning agents, especially when the reward function is sparse or noisy. Games are an excellent example of an area where RLHF is implemented.
+RLHF has been applied to various domains of natural language processing, such as conversational agents, text summarization, and natural language understanding. Ordinary reinforcement learning, where agents learn from their own actions based on a "reward function", is difficult to apply to natural language processing tasks because the rewards are often not easy to define or measure, especially when dealing with complex tasks that involve human values or preferences. RLHF can enable language models to provide answers that align with these complex values, to generate more verbose responses, and to reject questions that are either inappropriate or outside the knowledge space of the model. Some examples of RLHF-trained language models are OpenAI's ChatGPT and its predecessor InstructGPT, as well as DeepMind's Sparrow.
+
+The major differences between RLHF and instruction fine-tuning are:
+1-How the model learns:- RLHF typically involves an agent learning from a reward signal provided by human feedback. The agent explores various actions and receives feedback on the quality of its decisions. Instruction fine-tuning might involve a more direct and explicit form of guidance, where the model is fine-tuned based on specific instructions provided by humans. This may include marking examples, correcting them, or modeling behavior.
+
+2-Application: - RLHF is used in cases where the algorithm is unknown and the model is completely correct and needs to be revealed through feedback such as a game. model.
+
+3- Model Complexity:- RLHF can handle complex situations where the optimal rule may not appear immediately and the model must explore the differences to learn the correct rule. Fine-tuning training may be appropriate for situations where clear, rule-based instructions can guide the model without the need for extensive research.
+
+4-Efficiency:- RLHF approach requires interaction with the environment to ensure effective learning as the agent learns through trial and error. Fine-tuning can lead to better model performance because it uses clear instructions for humans and may require fewer requirements to fine-tune the model. These terms have a general meaning and specific differences may vary depending on the actual meaning and context of RLHF and the development of guidelines in specific cases.
+
+5-Task Specificity:- RLHF is generally used in situations where the task or environment is dynamic and the strategy may change over time. The model adapts through continuous communication and learning. Fine-tuning training can be useful for jobs where experts can give clear, static advice and there is no need to change the work environment.
+
+
+
+Question 3:- Provide an overview of the various methods for Parameter Efficient Fine-Tuning. Additionally, discuss the advantages and disadvantages associated with each method.
+
+Answer:- Parameter Efficient Fine Tuning (PEFT) refers to the technology of fine-tuning a pre-trained model using limited data or computational resources. Fine-tuning is a practice in machine learning in which a model, usually first trained on large datasets, is further trained on smaller datasets, especially for operational purposes. Below are various ways to make the most of adversities and their advantages and disadvantages:
+
+1. Distillation of Knowledge: Distillation of knowledge involves training a student model to imitate the behavior of an older teacher. The teacher provides soft goals (possible outcomes) to guide student learning.
+
+Advantages:
+- Reduced sample size.
+- Learn from models before training.
+
+Disadvantages:
+-The pre-trained model will not work well if it is not larger than the training model.
+-Hyperparameter setting needs to be added.
+
+2. Gradient Surgery: Gradient surgery changes the gradient during backpropagation to limit learning. It helps to control the influence of some negative factors to prevent overwork.
+
+Advantages:
+- Reduces overfitting in small data sets.
+- Improve your generalization ability.
+
+Disadvantages:
+- sensitive to hyperparameters.
+- Care should be taken to avoid negative aspects.
+
+3. Adversarial Training: Adversarial training provides feedback during fine-tuning, for example to increase the robustness of the model. The model is trained to withstand interventions that could cause it to go wrong.
+
+Advantages:
+- Improved model stability.
+-Canonical structure.
+
+Disadvantages:
+- Computation cost increases.
+-Balance between determination and accuracy.
+
+4. Data augmentation: Data augmentation involves presenting data through the use of various modifications to existing models. This helps the overall model be better for new, unseen data.
+
+Advantages:
+- Reduces overfitting.
+-Make better use of existing information.
+
+Disadvantages:
+- May not be sufficient for very small files.
+- Improvements should be chosen carefully.
+
+5. Feature Extraction: Optimized feature extraction for all models uses pre-trained models as a safe extractor and trains only the final set for the job.
+
+Advantages:
+- Reduces the number of parameters that need to be adjusted.
+- Faster training.
+
+Disadvantages:
+- It will not be able to capture the special nuances of the job well.
+- Limited target adaptability.
+
+6. Progressive resizing: Progressive resizing will start showing the pattern of small images and then gradually increase the size of the images during training. This helps the model learn the properties of different solutions.
+
+Advantages:
+- Improved generalization ability.
+- Adjust the model according to the difference.
+
+Disadvantages:< br>-The search needs to be calculated.
+-May not be suitable for all file types.
+
+7. A study of several steps: A study of several steps aims to refine a model using a small number of labels. Techniques like meta-learning or transfer learning from related tasks are commonly used.
+
+Advantages:
+-Effective in scenarios with extremely limited data.
+-Utilizes knowledge from related tasks.
+
+Disadvantages:
+-Sensitive to the choice of related tasks.
+-Limited to tasks with transferable knowledge.
